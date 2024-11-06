@@ -1,0 +1,524 @@
+/* Style général pour toutes les alertes */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+
+/* Alerte de type succès */
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+/* Alerte de type information */
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+/* Alerte de type avertissement */
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+/* Alerte de type danger */
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Ajout d'éléments optionnels comme le bouton de fermeture */
+.alert .close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    color: inherit;
+    text-shadow: none;
+    opacity: 0.5;
+    border: none;
+    background: none;
+}
+
+.alert .close:hover,
+.alert .close:focus {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    margin:0 auto;
+    width: 1024px;
+    box-shadow: 0px 0px 30px 10px rgba(0, 0, 25, .2);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Header Styles */
+header {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between; /* Distribute space between children */
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.logo-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+.logo-container a {
+    text-decoration: none;
+    color:#fff;
+}
+.site-logo {
+    height: 50px; /* Ajustez la hauteur en fonction de vos besoins */
+    width: auto; /* Conserver les proportions de l'image */
+    margin-right: 10px; /* Espacement entre le logo et le texte */
+    vertical-align: middle; /* Aligner l'image verticalement avec le texte */
+}
+
+
+nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #0056b3;
+}
+
+nav a.active {
+    background-color: #004494;
+}
+
+
+/* Language Selector Styles */
+#multi-lang {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #0056b3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.flag-icon {
+    width: 24px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    top: 100%;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #004494;
+}
+
+
+/* Main Styles */
+main {
+    flex: 1;
+    padding: 1rem;
+}
+
+section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.alert {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+}
+
+/* Styles pour le formulaire d'inscription */
+.signup-form , .signin-form{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    padding-right: 35px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Conteneur pour centrer le bouton */
+.signup-form, .signin-form {
+    text-align: center;
+}
+
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+
+.btn-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.btn-danger:hover {
+    color: #6b111a;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.project-tile {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.project-tile h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.project-tile p {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-tile p.project-users {
+    color: #495057!important;
+}
+
+/* Cacher les menus et afficher le bouton burger par défaut */
+#main-menu, #multi-lang {
+    display: none;
+}
+
+.burger-menu {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    padding: 0.5rem;
+}
+
+/* Styles généraux par défaut */
+.burger-menu {
+    display: none;
+}
+
+#main-menu, #multi-lang {
+    display: flex;
+}
+
+#github-not-editable {
+    display: block;
+}
+
+#github-editable {
+    display: none;
+}
+
+.edit-github-form {
+    margin-top: 10px;
+}
+
+.edit-github-form .form-group {
+    margin-bottom: 10px;
+}
+
+.edit-github-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.edit-github-form button {
+    font-size: 16px;
+    padding: 8px 12px;
+}
+
+/* Media query pour les petits écrans (moins de 480px) */
+@media (max-width: 520px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+    header h1, #main-menu, #multi-lang {
+        display: none;
+        flex-direction: column; /* Empiler les éléments verticalement */
+    }
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; /* Ajouté pour séparer le burger menu et multi-lang */
+    }
+ 
+    
+    /* Par défaut, le menu burger et les sous-menus sont cachés */
+    .burger-menu {        
+        cursor: pointer;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+    }
+
+    /* Les menus sont positionnés en absolu et prennent toute la largeur */
+    #main-menu, #multi-lang {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: #007bff; /* Même couleur que le header */
+        flex-direction: column; /* Empiler les éléments verticalement */
+    }
+
+    #multi-lang {
+        text-align: right;
+        position:absolute;
+        top:90px;
+    }
+    #multi-lang {
+        text-align: right;
+        position: absolute;
+        top: 90px;
+        right: 0; /* Ajouté pour aligner à droite */
+    }
+    #main-menu {
+        position:absolute;
+        top:120px;
+    }
+    .dropdown-content {
+        text-align: center;
+    }
+    .dropdown-content a {         
+        text-align: center;
+        width:auto;
+        margin-right:0;
+    }
+
+    #main-menu a {
+        padding: 15px;
+        width:100%;
+    }
+}
+
+/* Media query pour les écrans de 480px à 767px */
+@media (min-width: 521px) and (max-width: 980px) {
+    .burger-menu {
+        display: none;
+    }
+    #main-menu, #multi-lang {
+        display: flex;
+    }
+    .project-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    header {
+        flex-direction: row;
+        align-items: center;
+    }
+    nav {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+    header h1 {
+        display: none;
+    }
+    .signup-form, .signin-form {
+        border: none;
+        border-radius: none;
+        background-color: #ffffff;
+    }
+}
+
+/* Media query pour les écrans de 768px et plus */
+@media (min-width: 800px) {
+    .project-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    header {
+        flex-direction: row;
+        align-items: center;
+    }
+    header h1 {
+        display: inline;
+    }
+    #main-menu, #multi-lang {
+        display: flex;
+    }
+    nav {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+    .signup-form, .signin-form {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+    }
+}
+
+/* Media query pour les écrans jusqu'à 1024px */
+@media (max-width: 1024px) {
+    .container {
+        margin: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+}
+
+.otp-input {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    text-align: center;
+    font-size: 18px;
+}

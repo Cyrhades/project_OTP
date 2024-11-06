@@ -1,0 +1,13 @@
+        </main>
+
+        <footer>
+            <p>&copy; <%= new Date().getFullYear() %> <%= __('DevSocialNetwork') %></p>
+        </footer>
+    </div>
+    <script src="/script.js"></script>
+    <% if (page === 'profile' || page === '2fa' && user && user.id > 0) { %><script>
+        const apiKey = "<%= user.apikey %>";
+    </script>
+    <script src="/otp.js"></script><% }  %>
+</body>
+</html>

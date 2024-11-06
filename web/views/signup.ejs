@@ -1,0 +1,30 @@
+<%- include('header') -%>
+
+<section>
+    <h2><%= __('Sign Up') %></h2>
+    <% if (error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <form action="/signup" method="post" class="signup-form">
+        <input type="hidden" name="csrf" value=<%= csrf %>>
+        <div class="form-group">
+            <label for="username"><%= __('Username') %>:</label>
+            <input type="text" id="username" name="username" placeholder="<%= __('Username') %>" value="<%= username || '' %>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email"><%= __('Email') %>:</label>
+            <input type="email" id="email" name="email" placeholder="<%= __('Email') %>" maxlength="250" value="<%= email || '' %>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password"><%= __('Password') %>:</label>
+            <input type="password" id="password" name="password" placeholder="<%= __('Password') %>" required>
+            <small><i><%= __('Password requires at least 6 characters.') %></i></small>
+        </div>
+        
+        <button type="submit" class="btn btn-primary"><%= __('Sign Up') %></button>
+    </form>
+</section>
+
+<%- include('footer') -%>

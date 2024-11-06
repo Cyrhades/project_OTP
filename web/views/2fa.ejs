@@ -1,0 +1,26 @@
+<%- include('header') -%>
+<section>
+    <h2><%= __('Confirm your code') %></h2>
+
+    <% if (error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>       
+    <form method="post" action="/signin/a2f">
+        <input type="hidden" name="csrf" value=<%= csrf %>>
+        <input type="text" class="otp-input" maxlength="1" id="otp1">
+        <input type="text" class="otp-input" maxlength="1" id="otp2">
+        <input type="text" class="otp-input" maxlength="1" id="otp3">
+        <input type="text" class="otp-input" maxlength="1" id="otp4">
+        <input type="text" class="otp-input" maxlength="1" id="otp5">
+        <input type="text" class="otp-input" maxlength="1" id="otp6">
+    
+        <input type="hidden" id="hiddenOtp" name="otp_code">
+        <button id="valid_2fa" class="btn btn-primary" style="font-size: 16px; padding:8px 8px;" ><%= __('Validate') %></button>
+    </form>       
+    <form method="post" action="/signin/a2f">
+        <input type="hidden" name="csrf" value=<%= csrf %>>
+        <input type="hidden" name="stop_2fa">
+        <button type="submit" class="btn btn-primary"><%= __('Cancel') %></button>
+    </form>    
+</section>
+<%- include('footer') -%>

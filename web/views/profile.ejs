@@ -1,0 +1,57 @@
+<%- include('header') -%>
+<section>
+    <% if (profil.activated == 0) { %>
+        <div class="alert alert-warning">
+            <%= __('Our administrator does not easily validate accounts, but he will regularly check your profile.') %>
+            <%= __('Once your account is activated, you will need to log in again for the activation to take effect.') %>            
+        </div>
+    <% } %>
+    <div class="user-profile">
+        <h3><%= __('Your Profile Information') %></h3>
+        <p><strong><%= __('Username:') %></strong> <%= profil.username %></p>
+        <p><strong><%= __('Email:') %></strong> <%= profil.email %></p>
+        <p><strong><%= __('Join Date:') %></strong> <%= profil.created_at.toDateString() %></p>
+
+        <% if(profil.otp_enable != "1") { %>   
+            <% if (typeof error !== 'undefined' && error.otp === 0) { %>
+                <div class="alert alert-danger">
+                    <%= __('error validating your code') %>        
+                </div>
+            <% } %>
+            <button id="2fa" class="btn btn-info" style="font-size: 16px; padding:8px 8px;" ><%= __('Enable two-factor authentication') %></button>
+
+            <div id="hidden_zone_otp" style="display: none;">
+                <div>
+                    <strong><%= __('AccountName :') %></strong> <span><%= account %></span> 
+                    <br>
+                    <strong><%= __('Secret Key :') %></strong> <span><%= key %></span> 
+                    <br>
+                    <strong><%= __('Key Type :') %></strong> <span><%= __('Key Type: Time Based') %>(OTP - One Time Password)</span> 
+                    <br>
+                    <img src="<%= qrcode %>" style="width: 150px; height: 150px;">
+                </div>
+                
+                <div>
+                    <%= __('Confirm your code') %>
+                    <form method="post">
+                        <input type="hidden" name="csrf" value=<%= csrf %>>
+                        <input type="text" class="otp-input" maxlength="1" id="otp1">
+                        <input type="text" class="otp-input" maxlength="1" id="otp2">
+                        <input type="text" class="otp-input" maxlength="1" id="otp3">
+                        <input type="text" class="otp-input" maxlength="1" id="otp4">
+                        <input type="text" class="otp-input" maxlength="1" id="otp5">
+                        <input type="text" class="otp-input" maxlength="1" id="otp6">
+                    
+                        <input type="hidden" id="hiddenOtp" name="otp_code">
+                        <button id="valid_2fa" class="btn btn-primary" style="font-size: 16px; padding:8px 8px;" ><%= __('Validate') %></button>
+                    </form>                    
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <% if (user.roles.includes('ADMIN')) { %>
+        <button id="admin-valid-account" type="submit" class="btn btn-primary"><%= __('Validate User') %></button>
+    <% } %>
+</section>
+<%- include('footer') -%>

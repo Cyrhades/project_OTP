@@ -1,0 +1,39 @@
+<%- include('header') -%>
+<section>
+    <h2><%= __('Join the community of passionate developers') %></h2>
+    <p><%= __('Discover projects, share your code and collaborate with other developers.') %></p>
+    
+    <hr>
+    <div class="project-grid">
+        <% const projects = [
+            { name: __('Project Alpha'), description: __('An open-source project focused on AI development.'), stars: 4, users: ['JohnDoe', 'JaneSmith'] },
+            { name: __('DevConnect'), description: __('A social platform for developers to connect and share ideas.'), stars: 5, users: ['CoderMike', 'JaneSmith'] },
+            { name: __('CodeStream'), description: __('A collaborative coding environment for remote teams.'), stars: 3, users: ['AliceDev', 'JohnDoe'] },
+            { name: __('BugTracker'), description: __('A tool to help teams track and manage software bugs.'), stars: 4, users: ['BugHunter', 'DevNinja'] },
+            { name: __('Docsify'), description: __('A lightweight documentation generator for projects.'), stars: 5, users: ['TechWriter', 'AliceDev'] },
+            { name: __('TaskMaster'), description: __('A project management tool designed for agile teams.'), stars: 4, users: ['AgileGuru', 'CoderMike'] }
+        ]; %>
+
+        <% projects.forEach(project => { %>
+        <div class="project-tile">
+            <h3><%= project.name %></h3>
+            <p><%= project.description %></p>
+            <div class="stars">
+                <% for(let i = 0; i < project.stars; i++) { %>
+                    <span>&#9733;</span>
+                <% } %>
+                <% for(let i = project.stars; i < 5; i++) { %>
+                    <span>&#9734;</span>
+                <% } %>
+            </div>
+            <p class="project-users">
+                <strong><%= __('Contributors') %>:</strong> 
+                <% project.users.forEach((user, index) => { %>
+                    <%= user %><%= index < project.users.length - 1 ? ', ' : '' %>
+                <% }) %>
+            </p>
+        </div>
+        <% }); %>
+    </div>
+</section>
+<%- include('footer') -%>
